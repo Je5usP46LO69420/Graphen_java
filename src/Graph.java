@@ -1,26 +1,35 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Graph {
-    List<Node> _knoten = new ArrayList<Node>();
-    List<Edge> _edges = new ArrayList<Edge>();
+    HashMap<Integer,Node> _knoten;
 
 
-    public Graph(){}
+    public Graph(){
+        _knoten = new HashMap<>();
+    }
 
 
     public void addnode(int data){
-        _knoten.add(new Node(data));
+        _knoten.put(data,new Node(data));
     }
     public void addedge(int source,int weight ,int destination){
-        System.out.println(_knoten.get(source));
+        _knoten.get(source).addedge(new Edge(_knoten.get(source),weight,_knoten.get(destination)));
     }
 
     public void printgraph(){
-        for(Edge edge : _edges){
-            System.out.println(edge.getsource()+"\n|\n"+edge.getweight()+"\n|\n"+edge.getdestination());
+        for(Node node : _knoten.values()){
+            node.print();
         }
+    }
+    public void breitensuche(int id){
 
+    }
+    public void tiefensuche(){
+
+    }
+    public void shortestway(){
 
     }
 }
