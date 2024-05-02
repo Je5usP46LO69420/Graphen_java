@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Graph {
@@ -18,16 +19,20 @@ public class Graph {
         _knoten.get(source).addedge(new Edge(_knoten.get(source),weight,_knoten.get(destination)));
     }
 
-    public void printgraph(){
-        for(Node node : _knoten.values()){
-            node.print();
+    public void breitensuche(Node start){
+
+    }
+    public void tiefensuche(Node start){
+        System.out.println(start.getid());
+        List<Node> besucht = new LinkedList<>();
+
+        for(Edge e :start.getedge()){  //get edge nicht funktioniert
+            Node neighbour = e.getdestination();
+            if(!besucht.contains(neighbour)){
+                besucht.add(neighbour);
+                tiefensuche(neighbour);
+            }
         }
-    }
-    public void breitensuche(int id){
-
-    }
-    public void tiefensuche(){
-
     }
     public void shortestway(){
 

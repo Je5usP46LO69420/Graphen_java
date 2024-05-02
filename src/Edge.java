@@ -9,12 +9,12 @@ public class Edge {
         _knoten2 = knoten2;
     }
 
-    public String getsource() {
-        return "" + _knoten1.getid();
+    public Node getsource() {
+        return  _knoten1;
     }
 
-    public String getdestination() {
-        return "" + _knoten2.getid();
+    public Node getdestination() {
+        return _knoten2;
     }
 
     public String getweight() {

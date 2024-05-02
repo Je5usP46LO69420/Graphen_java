@@ -15,9 +15,7 @@ public class Node {
     public void addedge(Edge edge){
         _edges.add(edge);
     }
-    public void print(){
-        for(Edge edge : _edges){
-            System.out.println(edge.print());
-        }
-    }
+    /*public Edge getedge(){
+
+    }*/
 }
