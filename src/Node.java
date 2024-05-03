@@ -1,21 +1,24 @@
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Node {
 
-    List<Edge> _edges = new ArrayList<Edge>();
+    LinkedList<Edge> _edges;
     private int _id;
 
     public Node(int id){
         _id = id;
+        _edges = new LinkedList<>();
     }
-    public int getid(){
+    public Integer getid(){
         return _id;
     }
-    public void addedge(Edge edge){
-        _edges.add(edge);
+    public void addedge(Node n,int weight){
+        _edges.add(new Edge(n,weight));
     }
-    /*public Edge getedge(){
-
-    }*/
+    public List<Edge> getedges(){
+        return _edges;
+    }
 }

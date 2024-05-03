@@ -3,14 +3,25 @@ public class Main {
         Graph graph = new Graph();
 
 
-        graph.addnode(1);
-        graph.addnode(2);
-        graph.addnode(3);
+        Node erster = new Node(2);
+        Node zweiter = new Node(4);
+        Node dritter = new Node(5);
+        Node vierter = new Node(7);
+        Node fuenfter = new Node(10);
+        Node sechster = new Node(14);
 
-        graph.addedge(1,7,2);
-        graph.addedge(2,5,3);
 
-        graph.printgraph();
+        graph.addnode(erster);
+        graph.addnode(zweiter);
+        graph.addnode(dritter);
+        graph.addnode(vierter);
+
+        graph.addedge(erster ,7,zweiter);
+        graph.addedge(zweiter,5,dritter);
+        graph.addedge(dritter,6,vierter);
+        graph.addedge(zweiter,3,vierter);
+
+        graph.tiefensuche(erster);
 
     }
 }
